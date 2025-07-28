@@ -1,0 +1,164 @@
+/* START GLOBAL RULES */
+:root {
+    --main-color: #19c8fa;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+}
+
+body {
+    font-family: "Open Sans", sans-serif;
+    background-color: black;
+
+}
+
+.container {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Small Screens */
+@media (min-width: 768px) {
+    .container {
+        width: 750px;
+    }
+}
+
+/* Medium Screens */
+@media (min-width: 992px) {
+    .container {
+        width: 970px;
+    }
+}
+
+/* Large Screens */
+@media (min-width: 1200px) {
+    .container {
+        width: 1170px;
+    }
+}
+
+/* END GLOBAL RULES */
+
+/* START HEADER */
+header {
+    position: absolute;
+    left: 0;
+
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+header .container::before {
+    content: "";
+    width: calc(100% - 30px);
+    left: 15px;
+    height: 1px;
+    background-color: #a2a2a2;
+    position: absolute;
+    bottom: 0;
+}
+
+header .container img {
+    height: 40px;
+}
+
+header nav {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+header nav ul {
+    display: flex;
+}
+
+@media (max-width:768px) {
+    header nav ul {
+        display: none;
+    }
+}
+
+header nav ul li a {
+    display: block;
+    padding: 40px 10px;
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    transition: 0.5s;
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -ms-transition: 0.5s;
+    -o-transition: 0.5s;
+    position: relative;
+    z-index: 2;
+}
+
+header nav ul li a:hover,
+header nav ul li a.active {
+    color: var(--main-color);
+    border-bottom: 1px solid var(--main-color);
+}
+
+header nav .form {
+    width: 40px;
+    height: 30px;
+    position: relative;
+    margin-left: 30px;
+    border-left: 1px solid white;
+
+}
+
+header nav .form .search-icon {
+    color: white;
+    font-size: 20px;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+}
+
+header nav .nav-icon {
+    color: white;
+    font-size: 20px;
+    padding: 40px 0;
+}
+
+header nav .nav-icon:hover+ul {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+}
+
+header nav .nav-icon:hover+ul li a {
+    padding: 20px;
+}
+
+
+
+@media (min-width: 768px) {
+    header nav .nav-icon {
+        display: none;
+    }
+}
+
+/* END HEADER */
