@@ -2,6 +2,7 @@
 :root {
     --main-color: #19c8fa;
     --transparent-color: rgb(15 116 143 / 60%);
+    --parag-secondary-color: #777;
 }
 
 * {
@@ -13,7 +14,6 @@
 
 body {
     font-family: "Open Sans", sans-serif;
-    background-color: black;
 
 }
 
@@ -45,6 +45,65 @@ body {
     }
 }
 
+/* START COMPONENTS */
+
+.main-heading {
+    text-align: center;
+    margin-bottom: 80px;
+
+}
+
+.main-heading h2 {
+    margin-bottom: 80px;
+    font-size: 40px;
+    position: relative;
+    font-weight: normal;
+}
+
+.main-heading h2::before {
+    content: "";
+    position: absolute;
+    width: 120px;
+    height: 1px;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 40px);
+    -webkit-transform: translate(-50%, 40px);
+    -moz-transform: translate(-50%, 40px);
+    -ms-transform: translate(-50%, 40px);
+    -o-transform: translate(-50%, 40px);
+    background-color: black;
+}
+
+.main-heading h2::after {
+    content: "";
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    bottom: 0;
+    left: 50%;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    border: 1px solid;
+    transform: translate(-50%, 47.5px);
+    -webkit-transform: translate(-50%, 47.5px);
+    -moz-transform: translate(-50%, 47.5px);
+    -ms-transform: translate(-50%, 47.5px);
+    -o-transform: translate(-50%, 47.5px);
+    background-color: white;
+}
+
+.main-heading p {
+    width: 600px;
+    margin: 0 auto 0px;
+    max-width: 100%;
+    color: var(--parag-secondary-color);
+}
+
+/* END COMPONENTS */
 /* END GLOBAL RULES */
 
 /* START HEADER */
@@ -286,3 +345,53 @@ header nav .nav-icon:hover+ul li a {
 }
 
 /* END LANDING */
+
+/* START SERVICES */
+.services-section {
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+.services-section .services-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    row-gap: 60px;
+    column-gap: 40px;
+}
+
+.single-service {
+    display: flex;
+}
+
+.single-service .service-icon {
+    font-size: 47px;
+    margin-right: 50px;
+}
+
+@media (max-width: 767px) {
+    .single-service {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .single-service .service-icon {
+        margin: 0 0 20px;
+    }
+}
+
+.single-service .text-zone {
+    max-width: 100%;
+}
+
+.single-service .text-zone h3 {
+    color: var(--main-color);
+    margin-bottom: 30px;
+}
+
+.single-service .text-zone p {
+    color: var(--parag-secondary-color);
+    line-height: 2;
+}
+
+/* END SERVICES */
