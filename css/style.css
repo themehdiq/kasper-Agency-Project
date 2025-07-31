@@ -3,6 +3,8 @@
     --main-color: #19c8fa;
     --transparent-color: rgb(15 116 143 / 60%);
     --parag-secondary-color: #777;
+    --section-padding-top: 110px;
+    --section-padding-bottom: 110px;
 }
 
 * {
@@ -45,7 +47,7 @@ body {
     }
 }
 
-/* START COMPONENTS */
+/* ------------------------------- START COMPONENTS --------------------------------- */
 
 .main-heading {
     text-align: center;
@@ -65,7 +67,7 @@ body {
     position: absolute;
     width: 120px;
     height: 1px;
-    bottom: 0;
+    bottom: 10px;
     left: 50%;
     transform: translate(-50%, 40px);
     -webkit-transform: translate(-50%, 40px);
@@ -80,7 +82,7 @@ body {
     position: absolute;
     width: 15px;
     height: 15px;
-    bottom: 0;
+    bottom: 10px;
     left: 50%;
     border-radius: 50%;
     -webkit-border-radius: 50%;
@@ -98,15 +100,15 @@ body {
 
 .main-heading p {
     width: 600px;
-    margin: 0 auto 0px;
+    margin: 0 auto 100px;
     max-width: 100%;
     color: var(--parag-secondary-color);
 }
 
-/* END COMPONENTS */
+/* ------------------------------- END COMPONENTS --------------------------------- */
 /* END GLOBAL RULES */
 
-/* START HEADER */
+/* ------------------------------- START HEADER ----------------------------------- */
 header {
     position: absolute;
     left: 0;
@@ -229,9 +231,9 @@ header nav .nav-icon:hover+ul li a {
     }
 }
 
-/* END HEADER */
+/* ---------------------------------- END HEADER ------------------------------- */
 
-/* START LANDING */
+/* ---------------------------------- START LANDING ---------------------------- */
 .landing {
     min-height: 100vh;
     background-image: url(../images/landing.jpg);
@@ -344,12 +346,12 @@ header nav .nav-icon:hover+ul li a {
     border-color: var(--main-color);
 }
 
-/* END LANDING */
+/* ---------------------------- END LANDING ------------------------------------*/
 
-/* START SERVICES */
+/* -------------------------- START SERVICES ------------------------------------*/
 .services-section {
-    padding-top: 100px;
-    padding-bottom: 100px;
+    padding-top: var(--section-padding-top);
+    padding-bottom: var(--section-padding-bottom);
 }
 
 .services-section .services-content {
@@ -394,4 +396,86 @@ header nav .nav-icon:hover+ul li a {
     line-height: 2;
 }
 
-/* END SERVICES */
+/* -------------------------------- END SERVICES --------------------------------- */
+
+/* -------------------------------- START DESIGN FEATURES ------------------------ */
+.des-features {
+    height: 600px;
+    padding-top: var(--section-padding-top);
+    padding-bottom: var(--section-padding-bottom);
+    background-image: url("../images/design-features.jpg");
+    position: relative;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.des-features::before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 60%);
+}
+
+.des-features .mobile-img,
+.des-features .text {
+    position: relative;
+    flex: 1;
+    z-index: 2;
+}
+
+.des-features .mobile-img {
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .mobile-img {
+        display: none;
+    }
+}
+
+.des-features .mobile-img img {
+    position: relative;
+    bottom: -150px;
+}
+
+.des-features .text {
+    background-color: var(--transparent-color);
+    color: white;
+    padding: 50px;
+}
+
+.des-features h2 {
+    font-weight: normal;
+    margin-bottom: 50px;
+}
+
+.des-features ul li {
+    margin-bottom: 25px;
+}
+
+.des-features ul li::before {
+    font: var(--fa-font-solid);
+    content: '\e163';
+    margin-right: 20px;
+    font-weight: 900;
+    position: relative;
+    top: 1px;
+}
+
+
+
+
+/*------------------------------- END DESIGN FEATURES ---------------------------------*/
+
+/* ------------------------------ START PORTFOLIO -------------------------------------*/
+.portfolio-section {
+    padding-top: var(--section-padding-top);
+    padding-bottom: var(--section-padding-bottom);
+}
+
+/* ------------------------------ END PORTFOLIO -------------------------------------*/
