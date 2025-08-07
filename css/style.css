@@ -3,8 +3,8 @@
     --main-color: #19c8fa;
     --transparent-color: rgb(15 116 143 / 70%);
     --parag-secondary-color: #777;
-    --section-padding-top: 110px;
-    --section-padding-bottom: 110px;
+    --section-padding-top: 100px;
+    --section-padding-bottom: 100px;
 }
 
 * {
@@ -706,10 +706,10 @@ header nav .nav-icon:hover+ul li a {
     height: 100%;
     top: 0;
     left: 0;
-    background-color: rgba(0, 0, 0, 60%);
+    background-color: rgba(0, 0, 0, 70%);
 }
 
-.stats .box {
+.stats .container {
     background-color: var(--transparent-color);
     position: relative;
     display: flex;
@@ -721,66 +721,405 @@ header nav .nav-icon:hover+ul li a {
     z-index: 2;
 }
 
-.stats .about-image {
-    position: absolute;
-    width: 100%;
-    top: 0;
-    left: 50%;
-    transform: translate(-50%, -69%);
-    z-index: -1;
-    -webkit-transform: translate(-50%, -69%);
-    -moz-transform: translate(-50%, -69%);
-    -ms-transform: translate(-50%, -69%);
-    -o-transform: translate(-50%, -69%);
-}
 
-.stats .about-image img {
-    display: block;
-    width: 720px;
-    max-width: 100%;
-    margin: 0 auto;
-}
-
-.stats .box .stat {
+.stats .container .stat {
     color: white;
-    width: 100%;
+    flex-basis: 100%;
     text-align: center;
 }
 
 /* Small Screens */
 @media (min-width: 768px) {
-    .stats .box .stat {
-        width: 50%;
+    .stats .container .stat {
+        flex-basis: 50%;
     }
 }
 
 /* Medium Screens */
 @media (min-width: 992px) {
-    .stats .box .stat {
-        width: 25%;
+    .stats .container .stat {
+        flex-basis: 25%;
     }
 }
 
-.stats .box .stat i {
+.stats .container .stat i {
     background-color: black;
     width: 44px;
     height: 44px;
-    line-height: 43px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
     -ms-border-radius: 50%;
     -o-border-radius: 50%;
-    margin-bottom: 24px;
-
+    margin: 0 auto 30px;
 }
 
-.stats .box .stat h3 {
+.stats .container .stat h3 {
     font-size: 50px;
     margin-bottom: 14px;
+    font-weight: bold;
 }
 
-.stats .box .stat p {
+.stats .container .stat p {
     font-size: 14px;
 }
 
 /* ------------------------------ END STATS SECTION -------------------------------------*/
+
+/* ------------------------------ START SKILLS SECTION -------------------------------------*/
+.skills {
+    padding-top: var(--section-padding-top);
+    padding-bottom: var(--section-padding-bottom);
+}
+
+.skills .container {
+    display: flex;
+    justify-content: space-between;
+}
+
+@media (max-width: 991px) {
+    .skills .container {
+        flex-direction: column;
+        row-gap: 60px;
+    }
+}
+
+.skills .container .testimonials {
+    flex-basis: 45%;
+}
+
+.skills .container .testimonials .text {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.skills .container .testimonials .text h3 {
+    font-weight: normal;
+    margin-bottom: 30px;
+}
+
+.skills .container .testimonials .text p {
+    color: var(--parag-secondary-color);
+    line-height: 30px;
+}
+
+.skills .container .testimonials .users-testim {
+    margin-bottom: 40px;
+}
+
+.skills .container .testimonials .users-testim .box {
+    display: flex;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.skills .container .testimonials .users-testim .box .user-image {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    margin-right: 50px;
+}
+
+@media (max-width: 767px) {
+    .skills .container .testimonials .users-testim .box {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .skills .container .testimonials .users-testim .box .user-image {
+        margin-bottom: 20px;
+        margin-right: 0;
+    }
+}
+
+.skills .container .testimonials .users-testim .box .user-comment {}
+
+.skills .container .testimonials .users-testim .box .user-comment p:first-of-type {
+    line-height: 30px;
+
+}
+
+.skills .container .testimonials .users-testim .box .user-comment p:last-of-type {
+    text-align: right;
+    font-style: italic;
+    color: var(--parag-secondary-color);
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.skills .container .testimonials .users-testim .box .user-comment hr {
+    opacity: .5;
+}
+
+.skills .container .testimonials ul {
+    display: flex;
+    justify-content: center;
+}
+
+.skills .container .testimonials ul li {
+    width: 14px;
+    height: 14px;
+    border: 1px solid #aaa;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    margin-left: 7px;
+}
+
+.skills .container .testimonials ul li.active {
+    background-color: var(--main-color);
+    border: 1px solid var(--main-color);
+}
+
+.skills .container .our-skills {
+    flex-basis: 45%;
+}
+
+.skills .container .our-skills .text {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.skills .container .our-skills .text h3 {
+    font-weight: normal;
+    margin-bottom: 30px;
+}
+
+.skills .container .our-skills .text p {
+    color: var(--parag-secondary-color);
+    line-height: 30px;
+}
+
+.skills .container .our-skills .skills-chart {}
+
+.skills .container .our-skills .skills-chart .box {
+    margin-bottom: 40px;
+}
+
+.skills .container .our-skills .skills-chart .box h4 {
+    font-weight: normal;
+    margin-bottom: 15px;
+}
+
+.skills .container .our-skills .skills-chart .box .chart {
+    width: 100%;
+    height: 31px;
+    background-color: #ccc;
+    position: relative;
+}
+
+.skills .container .our-skills .skills-chart .box:nth-child(1) .chart .chart-level {
+    content: "";
+    position: absolute;
+    width: 90%;
+    height: 100%;
+    background-color: var(--main-color);
+}
+
+.skills .container .our-skills .skills-chart .box:nth-child(1) .chart::before {
+    content: "90%";
+    position: absolute;
+    background-color: black;
+    color: white;
+    padding: 3px 4px;
+    left: 90%;
+    top: -130%;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+}
+
+.skills .container .our-skills .skills-chart .box:nth-child(1) .chart::after {
+    content: "";
+    position: absolute;
+    width: 0px;
+    height: 0px;
+    border-top: 7px solid black;
+    border-right: 7px solid transparent;
+    border-bottom: 7px solid transparent;
+    border-left: 7px solid transparent;
+    left: 90%;
+    top: -44%;
+    transform: translateX(-50%);
+}
+
+.skills .container .our-skills .skills-chart .box:nth-child(2) .chart .chart-level {
+    content: "";
+    position: absolute;
+    width: 85%;
+    height: 100%;
+    background-color: var(--main-color);
+}
+
+.skills .container .our-skills .skills-chart .box:nth-child(2) .chart::before {
+    content: "85%";
+    position: absolute;
+    background-color: black;
+    color: white;
+    padding: 3px 4px;
+    left: 85%;
+    top: -130%;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+}
+
+.skills .container .our-skills .skills-chart .box:nth-child(2) .chart::after {
+    content: "";
+    position: absolute;
+    width: 0px;
+    height: 0px;
+    border-top: 7px solid black;
+    border-right: 7px solid transparent;
+    border-bottom: 7px solid transparent;
+    border-left: 7px solid transparent;
+    left: 85%;
+    top: -44%;
+    transform: translateX(-50%);
+}
+
+.skills .container .our-skills .skills-chart .box:nth-child(3) .chart .chart-level {
+    content: "";
+    position: absolute;
+    width: 80%;
+    height: 100%;
+    background-color: var(--main-color);
+}
+
+.skills .container .our-skills .skills-chart .box:nth-child(3) .chart::before {
+    content: "80%";
+    position: absolute;
+    background-color: black;
+    color: white;
+    padding: 3px 4px;
+    left: 80%;
+    top: -130%;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+}
+
+.skills .container .our-skills .skills-chart .box:nth-child(3) .chart::after {
+    content: "";
+    position: absolute;
+    width: 0px;
+    height: 0px;
+    border-top: 7px solid black;
+    border-right: 7px solid transparent;
+    border-bottom: 7px solid transparent;
+    border-left: 7px solid transparent;
+    left: 80%;
+    top: -44%;
+    transform: translateX(-50%);
+}
+
+.skills .container .our-skills .skills-chart .box:nth-child(4) .chart .chart-level {
+    content: "";
+    position: absolute;
+    width: 90%;
+    height: 100%;
+    background-color: var(--main-color);
+}
+
+.skills .container .our-skills .skills-chart .box:nth-child(4) .chart::before {
+    content: "90%";
+    position: absolute;
+    background-color: black;
+    color: white;
+    padding: 3px 4px;
+    left: 90%;
+    top: -130%;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+}
+
+.skills .container .our-skills .skills-chart .box:nth-child(4) .chart::after {
+    content: "";
+    position: absolute;
+    width: 0px;
+    height: 0px;
+    border-top: 7px solid black;
+    border-right: 7px solid transparent;
+    border-bottom: 7px solid transparent;
+    border-left: 7px solid transparent;
+    left: 90%;
+    top: -44%;
+    transform: translateX(-50%);
+}
+
+/* ------------------------------ END SKILLS SECTION -------------------------------------*/
+
+/* ------------------------------ START QUOTE SECTION -------------------------------------*/
+.quote {
+    padding-top: var(--section-padding-top);
+    padding-bottom: var(--section-padding-bottom);
+    background-image: url("../images/quote.jpg");
+    background-size: cover;
+    position: relative;
+}
+
+.quote::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 70%);
+
+}
+
+.quote p {
+    position: relative;
+    color: white;
+    text-align: center;
+    z-index: 2000;
+}
+
+.quote p:first-child {
+    font-size: 30px;
+    margin-bottom: 15px;
+}
+
+
+
+/* ------------------------------ END QUOTE SECTION -------------------------------------*/
