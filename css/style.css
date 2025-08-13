@@ -1455,8 +1455,8 @@ header nav .nav-icon:hover+ul li a {
 
 /* ------------------------------ START FOOTER -------------------------------------*/
 footer {
-    padding-top: 50px;
-    padding-bottom: 50px;
+    padding-top: calc(var(--section-padding-top) / 2);
+    padding-bottom: calc(var(--section-padding-bottom) / 2);
     text-align: center;
     position: relative;
     background-image: url(../images/subscribe.jpg);
@@ -1488,6 +1488,7 @@ footer .container h3 {
     font-size: 140%;
     margin-bottom: 50px;
     position: relative;
+    font-size: 26px;
 }
 
 footer .container h3::before {
@@ -1496,7 +1497,7 @@ footer .container h3::before {
     width: 200px;
     height: 1px;
     left: 50%;
-    bottom: -20px;
+    bottom: -30px;
     transform: translateX(-50%);
     background-color: white;
     -webkit-transform: translateX(-50%);
@@ -1506,11 +1507,13 @@ footer .container h3::before {
 }
 
 footer .container .icons {
-    width: 150px;
+    /* width: 150px; */
     margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
     margin-bottom: 60px;
+}
+
+footer .container .icons i {
+    padding: 15px;
 }
 
 footer .container p span {
